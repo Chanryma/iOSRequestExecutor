@@ -29,7 +29,7 @@
     instance.requestId = requestId;
     instance.requestStartTime = [NSDate timeIntervalSinceReferenceDate];
     instance.requestStartTimeStr = [DateUtil formatDate:[NSDate dateWithTimeIntervalSinceReferenceDate:instance.requestStartTime] withFormat:@"HH:mm:ss.SSS"];
-    LogInfo(@"Sending a request. requestId=%d. startTime=%@.", requestId, instance.requestStartTimeStr);
+    LogInfo(@"Sending a request. requestId=%ld. startTime=%@.", requestId, instance.requestStartTimeStr);
     
     return instance;
 }
@@ -99,7 +99,7 @@
 -(void)logRequestTimeCost:(BOOL)isSuccess {
     NSString *log = isSuccess ? @"Request succeeded on network level." : @"Request failed on network level.";
     NSTimeInterval timeCost = [NSDate timeIntervalSinceReferenceDate] - _requestStartTime;
-    LogInfo(@"%@ requestId=%d. startTime=%@, timeCost=%.0fms", log, _requestId, _requestStartTimeStr, (timeCost * 1000));
+    LogInfo(@"%@ requestId=%ld. startTime=%@, timeCost=%.0fms", log, _requestId, _requestStartTimeStr, (timeCost * 1000));
 }
 
 @end
