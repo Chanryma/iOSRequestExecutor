@@ -38,7 +38,13 @@
 }
 
 -(void)processResponse:(HttpRequestResult *)result {
-    NSLog(@"requestId=%ld, %@", (long)result.requestId, result.data);
+    if (result.requestId == 1001) {
+        NSLog(@"requestId=%ld, %@", (long)result.requestId, result.data);
+    } else if (result.requestId == 1002) {
+        NSLog(@"requestId=%ld, %@", (long)result.requestId, result.data);
+    } else {
+        
+    }
 }
 
 @end

@@ -12,9 +12,11 @@
 @interface HttpResponseJsonListener : AHttpResponseListener
 
 /**
- *  Alloc a new instance.
- *
- *  @return A new instance.
+ Create a new HTTP response listener that will parse the response data into JSON.
+
+ @param requestId a value to indentify a request.
+ @param observer the delegate to receive the result parsed by this response listener.
+ @return a new HTTP response listener.
  */
 +(instancetype)instanceWithRequestId:(NSInteger)requestId observer:(id<ResponseDelegate>)observer;
 
